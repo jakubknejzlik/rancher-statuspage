@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "node app.js",
+    "start-dev": "node app.dev.js",
     "build": "docker build . -t jakubknejzlik/rancher-statuspage:latest && docker push jakubknejzlik/rancher-statuspage:latest"
   }
 }
