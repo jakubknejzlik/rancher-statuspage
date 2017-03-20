@@ -9,7 +9,7 @@ class GetInfo extends React.Component{
     }
 
     componentDidMount(){
-        axios.get('http://localhost:3000/metadata')
+        axios.get('/metadata')
             .then(res => {
                 console.log(res.data);
                 this.setState({
@@ -55,11 +55,12 @@ class Fetch extends React.Component{
 
     renderServices(){
         return (
+
             <ul className ="list-group list-group-flush">
                     {this.state.services.map(service =>
                         <li className ="list-group-item d-flex justify-content-between">
                             <span>{service.name}</span>
-                            <span className ="badge badge-success">{service.status}</span>
+                            <span className ={"badge badge-"+service.status}>{service.status}</span>
                         </li>
                     )}
                 </ul>
