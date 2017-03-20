@@ -17,9 +17,9 @@ app.get('/metadata',(req,res,next) => {
 
 app.get('/services',(req,res,next) => {
   res.send([
-    {name: 'Service 1', status: 'ok'},
-    {name: 'Service 2', status: 'warning', statusMessage: 'unhealthy', statusDescription: 'degraded performance'},
-    {name: 'Service 3', status: 'danger', statusMessage: 'error', statusDescription: 'something bad happened'}
+    {name: 'Service 1', status: 'ok', statusMessage: 'operational'},
+    {name: 'Service 2', status: 'warning', statusMessage: 'unhealthy'},
+    {name: 'Service 3', status: 'danger', statusMessage: 'error'}
   ])
 })
 
