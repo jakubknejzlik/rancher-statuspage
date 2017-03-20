@@ -1,0 +1,14 @@
+{
+  "name": "rancher-metadata",
+  "private": "true",
+  "version": "0.0.1",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "express": "^4.15.2",
+    "request": "^2.81.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "build": "docker build . -t jakubknejzlik/rancher-statuspage:latest && docker push jakubknejzlik/rancher-statuspage:latest"
+  }
+}
