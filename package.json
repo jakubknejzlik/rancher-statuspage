@@ -1,7 +1,7 @@
 {
   "name": "rancher-metadata",
   "private": "true",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "dependencies": {
     "bluebird": "^3.5.0",
     "express": "^4.15.2",
