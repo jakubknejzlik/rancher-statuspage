@@ -14,7 +14,8 @@ const PRIORITY_LABEL = 'io.rancher.statuspage.priority'
 const serviceStates = {
   active: 'success',
   upgraded: 'warning',
-  upgrading: 'warning'
+  upgrading: 'warning',
+  'updating-active': 'warning'
 }
 
 app.use(express.static(path.join(__dirname, 'static')))
