@@ -1,10 +1,8 @@
-FROM node
+FROM node:7-alpine
 
 COPY . /code
 
 WORKDIR /code
-
-RUN node -v
 
 RUN rm -rf node_modules
 

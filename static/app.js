@@ -11,7 +11,7 @@ class GetInfo extends React.Component{
     componentDidMount(){
         axios.get('/metadata')
             .then(res => {
-                console.log(res.data);
+                document.title = "StatusPage | " + res.data.environment.name;
                 this.setState({
                     metadata: res.data,
                     loading: false
@@ -57,10 +57,10 @@ class Fetch extends React.Component{
         return (
 
             <ul className ="list-group list-group-flush">
-                    {this.state.services.map(service =>
-                        <li className ="list-group-item d-flex justify-content-between">
+                    {this.state.services.map((service, index) =>
+                        <li key={index} className ="list-group-item d-flex justify-content-between">
                             <span>{service.name}</span>
-                            <span className ={"badge badge-"+service.status}>{service.status}</span>
+                            <span className ={"badge badge-"+service.status}>{service.statusMessage}</span>
                         </li>
                     )}
                 </ul>
@@ -70,7 +70,6 @@ class Fetch extends React.Component{
     getData(){
         axios.get('/services')
             .then(res => {
-                console.log(res.data);
                 this.setState({
                     services: res.data,
                     loading: false
