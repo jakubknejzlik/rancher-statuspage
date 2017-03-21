@@ -15,7 +15,8 @@ const serviceStates = {
   active: 'success',
   upgraded: 'warning',
   upgrading: 'warning',
-  'updating-active': 'warning'
+  'updating-active': 'warning',
+  'finishing-upgrade': 'warning'
 }
 
 app.use(express.static(path.join(__dirname, 'static')))
