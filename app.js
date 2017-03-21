@@ -46,7 +46,7 @@ app.get('/services', (req, res, next) => {
     if (!SHOW_UNLABELLED_SERVICES && !service.labels[NAME_LABEL]) return null
     return {
       name: service.labels[NAME_LABEL] || `${service.stack_name} - ${service.name}`,
-      sortValue: service.labels[PRIORITY_LABEL],
+      sortValue: parseInt(service.labels[PRIORITY_LABEL]),
       status: serviceStates[service.state] || 'danger',
       statusMessage: service.state
     }
@@ -56,7 +56,7 @@ app.get('/services', (req, res, next) => {
   })
   .then((results) => {
     results.sort((s1, s2) => {
-      if (s1.sortValue) return s1.sortValue < s2.sortValue
+      if (s1.sortValue || s2.sortValue) return s1.sortValue < s2.sortValue
       return s1.name > s2.name
     })
     res.send(results)
